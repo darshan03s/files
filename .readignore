@@ -4,3 +4,5 @@ components.json
 *prettier*
 migration.sql
 */components/ui/*
+.husky
+lib/generated/prisma
