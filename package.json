@@ -1,0 +1,6 @@
+"lint-staged": {
+    "**/*": [
+      "eslint --fix",
+      "prettier --write --ignore-unknown"
+    ]
+  },
