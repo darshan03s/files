@@ -1,0 +1,6 @@
+components.json
+*.css
+*tsconfig*
+*prettier*
+migration.sql
+*/components/ui/*
