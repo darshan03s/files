@@ -3,6 +3,6 @@ components.json
 *tsconfig*
 *prettier*
 migration.sql
-*/components/ui/*
+components/ui/*
 .husky
 lib/generated/prisma
