@@ -7,3 +7,9 @@ async function getAppVersionFromCommand(command: string) {
   }
   return match[0];
 }
+
+async function listSubfolderNames(dir: string): Promise<string[]> {
+  const entries = await readdir(dir, { withFileTypes: true });
+
+  return entries.filter((entry) => entry.isDirectory()).map((entry) => entry.name);
+}
