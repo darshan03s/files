@@ -1,0 +1,46 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "files",
+  "homepage": "https://github.com/darshan03s/files",
+  "items": [
+    {
+      "name": "build-registry",
+      "title": "Build registry script",
+      "type": "registry:file",
+      "description": "Add build-registry script to project",
+      "files": [
+        {
+          "path": "share/build-registry.ts",
+          "type": "registry:file",
+          "target": "build-registry.ts"
+        }
+      ]
+    },
+    {
+      "name": "prettierrc",
+      "title": "Prettier config",
+      "type": "registry:file",
+      "description": "Add prettier config to project",
+      "files": [
+        {
+          "path": "share/.prettierrc",
+          "type": "registry:file",
+          "target": ".prettierrc"
+        }
+      ]
+    },
+    {
+      "name": "cn",
+      "title": "cn util",
+      "type": "registry:file",
+      "description": "Add cn util to project",
+      "files": [
+        {
+          "path": "share/cn.ts",
+          "type": "registry:file",
+          "target": "cn.ts"
+        }
+      ]
+    }
+  ]
+}
