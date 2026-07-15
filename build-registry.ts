@@ -45,6 +45,19 @@ const registryItems: RegistryItem[] = [
         target: 'cn.ts'
       }
     ]
+  },
+  {
+    name: 'logger',
+    title: 'Logger util',
+    type: 'registry:file',
+    description: 'Add logger util to project',
+    files: [
+      {
+        path: 'share/logger.ts',
+        type: 'registry:file',
+        target: 'logger.ts'
+      }
+    ]
   }
 ]
 
