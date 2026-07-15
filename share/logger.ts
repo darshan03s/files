@@ -24,5 +24,10 @@ export const logger = {
 
   error: (...args: unknown[]) => {
     console.error(`${time()} ${c.red}[ERROR]${c.reset}`, ...args)
+  },
+
+  dir: (value: unknown, options?: Parameters<typeof console.dir>[1]) => {
+    console.log(`${time()} ${c.blue}[DIR]${c.reset}`)
+    console.dir(value, options)
   }
 }
