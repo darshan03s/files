@@ -97,12 +97,6 @@ const registry = fs.readFileSync(registryFilePath, 'utf-8')
 
 const existingRegistryJson = JSON.parse(registry) as Registry
 
-const existingRegistryItems = existingRegistryJson.items
-
-const existingRegistryItemsNames = existingRegistryItems.map((obj) => obj.name) as string[]
-
-const registryItemsNames = registryItems.map((obj) => obj.name) as string[]
-
 function writeRegistry(updated: Registry) {
   fs.writeFileSync(registryFilePath, JSON.stringify(updated, null, 2))
   if (postBuild) {
@@ -147,10 +141,11 @@ function updateRegistry() {
           const target = file.target.replace(/\/$/, '')
           const filePaths = getFilePaths(folderPath)
           filePaths.forEach((filePath) => {
+            const relative = path.relative(folderPath, filePath)
             files.push({
               type: type,
               path: filePath,
-              target: path.join(target.split('/').slice(1).join('/'), filePath)
+              target: path.join(target.replace(/\/$/, ''), relative)
             })
           })
         } else {
@@ -168,21 +163,7 @@ function updateRegistry() {
 }
 
 function main() {
-  registryItems.forEach((item) => {
-    const name = item.name
-    if (!existingRegistryItemsNames.includes(name)) {
-      console.log(`Adding registry item: ${name}`)
-      updateRegistry()
-    }
-  })
-
-  existingRegistryItems.forEach((item) => {
-    const name = item.name
-    if (!registryItemsNames.includes(name)) {
-      console.log(`Deleting registry item: ${name}`)
-      updateRegistry()
-    }
-  })
+  updateRegistry()
 }
 
 main()
