@@ -76,6 +76,24 @@
           "target": "env.ts"
         }
       ]
+    },
+    {
+      "name": "next-seo",
+      "title": "Next seo",
+      "type": "registry:file",
+      "description": "Add seo files for nextjs",
+      "files": [
+        {
+          "path": "share/next-sitemap.ts",
+          "type": "registry:file",
+          "target": "sitemap.ts"
+        },
+        {
+          "path": "share/next-robots.ts",
+          "type": "registry:file",
+          "target": "robots.ts"
+        }
+      ]
     }
   ]
 }
