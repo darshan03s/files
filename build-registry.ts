@@ -58,6 +58,25 @@ const registryItems: RegistryItem[] = [
         target: 'logger.ts'
       }
     ]
+  },
+  {
+    name: 'next-metadata',
+    title: 'Next metadata',
+    type: 'registry:file',
+    description: 'Add metadata for nextjs',
+    dependencies: ['zod', '@t3-oss/env-nextjs'],
+    files: [
+      {
+        path: 'share/next-metadata.ts',
+        type: 'registry:file',
+        target: 'metadata.ts'
+      },
+      {
+        path: 'share/next-env.ts',
+        type: 'registry:file',
+        target: 'env.ts'
+      }
+    ]
   }
 ]
 
@@ -220,5 +239,3 @@ function main() {
 }
 
 main()
-
-console.log(`Nothing to add or remove`)
